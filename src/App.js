@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Form from './NewProject/Form';
+import Navbar from './NewProject/Navbar';
+import PageContent from './NewProject/PageContent';
+import {ThemeProvider} from './NewProject/contexts/ThemeContext';
+import {LanguageProvider} from './NewProject/contexts/LanguageContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+function App(){
+  return(
+    <div>
+      <>
+      <ThemeProvider>
+        <LanguageProvider>
+          <PageContent>
+              <Navbar />
+              <Form />
+            </PageContent>
+          </LanguageProvider>
+      </ThemeProvider>
+      </>
     </div>
-  );
+  )
 }
 
 export default App;
